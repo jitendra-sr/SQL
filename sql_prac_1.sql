@@ -54,6 +54,7 @@ CREATE TABLE stu1 (
     ON UPDATE CASCADE
     ON DELETE CASCADE
 );
+-- The foreign key prevents the invalid data from being inserted in child (this) table. It maintains the referential integrity between the two tables. It ensures that the value in the foreign key column must match a value (or exist) in the referenced primary key column of the parent table.
 -- ###################################################################
 
 
@@ -101,71 +102,6 @@ ALTER TABLE student CHANGE COLUMN id s_id int;
 ALTER TABLE student MODIFY COLUMN id bigint;
 
 TRUNCATE TABLE student;
--- ###################################################################
-
-
--- UNION -> It is used to combine the result-set of two or more SELECT satatements, Gives uniques records only.
--- UNION ALL -> Gives all records including duplicate ones.
-
--- Every SELECT should have same no of columns
--- Columns must have similar data types
--- Columns in every SELECT should be in same order
-
-
-
--- Inner Join -> returns records that have matching values in both tables
-
-SELECT * FROM student INNER JOIN course ON student.s_id = course.c_id;
-
-SELECT * 
-FROM student as s 
-INNER JOIN course as c
-ON s.s_id = c.c_id;
-
-
-
--- Left Join -> returns all records from left table and matched records from right table
-
-SELECT * FROM student LEFT JOIN course ON student.s_id = course.c_id;
-
-
-
--- Right Join -> returns all records from right table and matched records from left table
-
-SELECT * FROM student RIGHT JOIN course ON student.s_id = course.c_id;
-
-
-
--- Full Join -> returns all records when there is a match in either left or right table
-
-SELECT * FROM student LEFT JOIN course ON student.s_id = course.c_id
-UNION
-SELECT * FROM student RIGHT JOIN course ON student.s_id = course.c_id;
-
-
-
--- Left/Right Exclusive Join -> returns all records from left/right table exclusively
-
-SELECT * FROM student LEFT JOIN course ON student.s_id = course.c_id WHERE course.id IS NULL;
-SELECT * FROM student RIGHT JOIN course ON student.s_id = course.c_id WHERE student.id IS NULL;
-
-
-
--- Full Exclusive Join -> returns all records from left and right table excluding the common one
-
-SELECT * FROM student LEFT JOIN course ON student.s_id = course.c_id WHERE course.id IS NULL
-UNION
-SELECT * FROM student RIGHT JOIN course ON student.s_id = course.c_id WHERE student.id IS NULL;
-
-
-
--- Self Join -> It's a regular join but the table is joined with itself
-
-SELECT
-a.name as stu_name, b.name
-FROM student as a
-JOIN student as b
-ON a.s_id = b.c_id;
 -- ###################################################################
 
 
