@@ -58,27 +58,6 @@ CREATE TABLE stu1 (
 -- ###################################################################
 
 
-SELECT * FROM student WHERE marks+10 >= 80 OR city != "Mumbai";
-SELECT * FROM student WHERE marks BETWEEN 80 AND 90;
-SELECT * FROM student WHERE city NOT IN ("Delhi" , "Mumbai");
-
-SELECT DISTINCT city FROM student;
-SELECT AVG(marks) FROM student;
-SELECT * FROM student ORDER BY marks DESC LIMIT 5;
-SELECT sname, city, COUNT(id) FROM student GROUP BY sname, city;
-SELECT city, COUNT(id) FROM student GROUP BY city HAVING MAX(marks) > 90;
--- WHERE applies conditions on rows while HAVING applies on cols (or groups).
-
--- General Order of Commands ->
--- SELECT cols 
--- FROM tab 
--- WHERE conditions 
--- GROUP BY cols 
--- HAVING conditions 
--- ORDER BY cols ASC 
--- ###################################################################
-
-
 -- Data Updation
 
 SET SQL_SAFE_UPDATES = 0;
