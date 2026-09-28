@@ -74,3 +74,7 @@ UNION
 SELECT * FROM student RIGHT JOIN course ON student.s_id = course.c_id WHERE student.id IS NULL;
 
 -- ###############################################################################################
+
+-- Natural Join -> It joins the two tables using the columns having same name (or common in both) without specifying the column matching condition explicitly.
+
+-- Cross Join -> It gives the cartesian product of two tables ie. if tables have n and m rows, then cross join will have n*m rows.
