@@ -36,3 +36,14 @@ CASE
     WHEN condition2 THEN value2
     ELSE NULL -- No need to specify ELSE NULL as it is the default behavior of the CASE expression.
 END
+
+
+
+-- 5. IF() — one condition
+IF(condition, value_if_true, value_if_false)
+
+SELECT IF(salary > 50000, 'High', 'Low') AS level 
+FROM Employee;
+
+
+
