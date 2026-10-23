@@ -1,10 +1,26 @@
 -- General Order of Commands ->
+
 -- SELECT cols 
 -- FROM tab 
 -- WHERE conditions 
 -- GROUP BY cols 
 -- HAVING conditions 
 -- ORDER BY cols DESC 
+-- LIMIT n
+
+
+-- The logical execution order -> 
+-- EXPLAIN ANALYZE - Show the execution plan and actual runtime statistics of a query.
+
+-- FROM — Choose the table(s).
+-- WHERE — Filter individual rows.
+-- GROUP BY — Group the remaining rows.
+-- HAVING — Filter groups.
+-- SELECT — Choose columns and calculate expressions.
+-- ORDER BY — Sort the result.
+-- LIMIT — Restrict the number of rows, if specified.
+
+
 
 SELECT * FROM student WHERE marks+10 >= 80 OR city != "Mumbai";
 SELECT * FROM student WHERE marks BETWEEN 80 AND 90;
