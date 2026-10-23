@@ -33,3 +33,17 @@ DATE_FORMAT(recordDate, '%d,%a,%b') -- 28,Sun,Sep
 DATE_FORMAT(recordTime, '%H:%i:%s') -- 13:40:25
 DATE_FORMAT(NOW(), '%h:%i %p') -- 01:40 PM
 -- DATE_FORMAT() returns a string, not a date or time.
+
+7. Convert a string to a date or time or datetime
+STR_TO_DATE('2026-09-28', '%Y-%m-%d') -- 2026-09-28
+STR_TO_DATE('28,Sun,Sep', '%d,%a,%b') -- 2026-09-28
+
+
+8. Extract parts of a date or time or datetime
+YEAR(recordDate) -- 2026
+MONTH(recordDate) -- 9
+DAY(recordDate) -- 28
+HOUR(recordTime) -- 13
+MINUTE(recordTime) -- 40
+SECOND(recordTime) -- 25
+-- It returns an integer value, not a string.
